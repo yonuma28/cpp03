@@ -10,7 +10,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "!!DESTROYED!!" << std::endl;
+	std::cout << "ClapTrap Destructor called for " << name_ << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name)
@@ -65,9 +65,10 @@ void ClapTrap::takeDamage(unsigned int amount)
             << amount << " points of additional damage!" << std::endl;
 		return;
 	}
-	hit_points_ -= amount;
-	if (hit_points_ < 0)
+	if (amount >= static_cast<unsigned int>(hit_points_))
 		hit_points_ = 0;
+	else
+		hit_points_ -= static_cast<int>(amount);
 	std::cout << "ClapTrap " << name_ << " takes " << amount << " points of damage! " 
           << "(hit_points: " << hit_points_ << ")" << std::endl;
 }
