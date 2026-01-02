@@ -2,9 +2,10 @@
 
 ClapTrap::ClapTrap()
     : name_(""),
-      hit_points_(default_hit_points),
-      energy_points_(default_energy_points),
-      attack_damage_(default_attack_damage) {
+      hit_points_(10),
+      energy_points_(10),
+      attack_damage_(0)
+{
   std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
@@ -15,28 +16,44 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const std::string& name)
     : name_(name),
-		hit_points_(default_hit_points),
-		energy_points_(default_energy_points),
-		attack_damage_(default_attack_damage) {
+		hit_points_(10),
+		energy_points_(10),
+		attack_damage_(0)
+{
     std::cout << "ClapTrap name constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& claptrap)
-    : name_(claptrap.getName()),
-      hit_points_(claptrap.getHitPoints()),
-      energy_points_(claptrap.getEnergyPoints()),
-      attack_damage_(claptrap.getAttackDamage()) {
+    : name_(claptrap.name_),
+      hit_points_(claptrap.hit_points_),
+      energy_points_(claptrap.energy_points_),
+      attack_damage_(claptrap.attack_damage_)
+{
   std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
-std::string	ClapTrap::getName() const { return name_; }
-int	ClapTrap::getHitPoints() const { return hit_points_; }
-int ClapTrap::getEnergyPoints() const { return energy_points_; }
-int ClapTrap::getAttackDamage() const { return attack_damage_; }
+ClapTrap& ClapTrap::operator=(const ClapTrap& copy)
+{
+	if (this != &copy)
+	{
+		this->name_ = copy.name_;
+        this->hit_points_ = copy.hit_points_;
+        this->energy_points_ = copy.energy_points_;
+        this->attack_damage_ = copy.attack_damage_;
+	}
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
+    return *this;
+}
+
+std::string		ClapTrap::getName() const { return name_; }
+unsigned int 	ClapTrap::getHitPoints() const { return hit_points_; }
+unsigned int 	ClapTrap::getEnergyPoints() const { return energy_points_; }
+unsigned int 	ClapTrap::getAttackDamage() const { return attack_damage_; }
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (energy_points_ && hit_points_) {
+	if (energy_points_ && hit_points_)
+	{
 		energy_points_--;
 		std::cout << "ClapTrap " << name_ << " attacks " << target
 				<< ", causing " << attack_damage_ << " points of damage! "
@@ -48,7 +65,8 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (hit_points_ <= 0) {
+	if (hit_points_ <= 0)
+	{
 		std::cout << "ClapTrap " << name_ << " is already destroyed and cannot take " 
             << amount << " points of additional damage!" << std::endl;
 		return;
