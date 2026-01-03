@@ -35,10 +35,6 @@ class ClapTrap
 		int	getHitPoints() const;
 		int getEnergyPoints() const;
 		int getAttackDamage() const;
-
-		static const int default_hit_points = 10;
-		static const int default_energy_points = 10;
-		static const int default_attack_damage = 0;
 };
 
 # endif //CLAPTRAP_H
