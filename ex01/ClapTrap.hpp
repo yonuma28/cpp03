@@ -7,14 +7,14 @@
 class ClapTrap
 {
 	protected:
-		std::string	name_;
-		int			hit_points_;
-		int			energy_points_;
-  		int 		attack_damage_;
+		std::string		name_;
+		unsigned int	hit_points_;
+		unsigned int	energy_points_;
+  		unsigned int 	attack_damage_;
 
 	public:
 		ClapTrap();
-		~ClapTrap();
+		virtual ~ClapTrap();
 		
 		// prepare
 		ClapTrap(const std::string& name);
@@ -26,15 +26,15 @@ class ClapTrap
 		ClapTrap& operator=(const ClapTrap& other);
 		
 		// basic_movement
-		void attack(const std::string& target);
+		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
 		// get_information
-		std::string	getName() const;
-		int	getHitPoints() const;
-		int getEnergyPoints() const;
-		int getAttackDamage() const;
+		std::string	 getName() const;
+		unsigned int getHitPoints() const;
+		unsigned int getEnergyPoints() const;
+		unsigned int getAttackDamage() const;
 };
 
 # endif //CLAPTRAP_H

@@ -9,7 +9,7 @@ class ScavTrap : public ClapTrap
 		// OCM
 		ScavTrap();
 		ScavTrap(const std::string& name);
-		~ScavTrap();
+		virtual ~ScavTrap();
 		ScavTrap(const ScavTrap& other);
 		ScavTrap& operator=(const ScavTrap& other);
 
@@ -31,4 +31,4 @@ class ScavTrap : public ClapTrap
 		void guardGate();
 };
 
-# endif
+# endif // SCAVTRAP_HPP

@@ -39,7 +39,7 @@ ClapTrap::ClapTrap(std::string name,
 	  attack_damage_(attack_damage)
 {
 	std::cout << "ClapTrap detailed constructor called" << std::endl;
-};
+}
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
@@ -54,9 +54,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 }
 
 std::string	ClapTrap::getName() const { return name_; }
-int	ClapTrap::getHitPoints() const { return hit_points_; }
-int ClapTrap::getEnergyPoints() const { return energy_points_; }
-int ClapTrap::getAttackDamage() const { return attack_damage_; }
+unsigned int	ClapTrap::getHitPoints() const { return hit_points_; }
+unsigned int ClapTrap::getEnergyPoints() const { return energy_points_; }
+unsigned int ClapTrap::getAttackDamage() const { return attack_damage_; }
 
 void ClapTrap::attack(const std::string& target)
 {

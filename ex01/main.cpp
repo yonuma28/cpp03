@@ -6,7 +6,7 @@
 /*   By: yonuma <yonuma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:32:21 by yonuma            #+#    #+#             */
-/*   Updated: 2025/12/10 18:32:21 by yonuma           ###   ########.fr       */
+/*   Updated: 2026/01/03 12:33:19 by yonuma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ int main() {
 	}
 	std::cout << std::endl;
 
+	std::cout << "========== test =============" << std::endl;
+	ClapTrap* robot = new ScavTrap("Serena");
+	delete robot;
+
+	std::cout << std::endl;
 	std::cout << "========== 破棄(デストラクタ)順の確認 ==========" << std::endl;
 	return 0;
 }
