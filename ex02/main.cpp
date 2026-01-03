@@ -53,6 +53,5 @@ int main() {
     run_scav_trap_tests();
     run_frag_trap_tests();
     
-    std::cout << "\n========== 破棄順(デストラクタ)の確認 ==========" << std::endl;    
     return 0;
 }

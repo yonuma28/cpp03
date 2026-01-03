@@ -20,6 +20,7 @@ class FragTrap : public ClapTrap
 		 * コメントを表示して終わり 
 		*/
 		void highFivesGuys (void);
+		void attack(const std::string& target);
 };
 
 # endif // FRAGTRAP_H

@@ -6,11 +6,8 @@ FragTrap::FragTrap() : ClapTrap("default_flag", 100, 100, 30)
               << " (HP:" << this->hit_points_ << ")" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name, 100, 100, 30)
 {
-	hit_points_ = 100;
-	energy_points_ = 100;
-	attack_damage_ = 30;
 	std::cout << "FragTrap " << this->name_ << " constructed! Ready to party." 
               << " (HP:" << this->hit_points_ << ")" << std::endl;
 }
@@ -38,4 +35,16 @@ FragTrap& FragTrap::operator=(const FragTrap& other)
 void FragTrap::highFivesGuys (void)
 {
 	std::cout << "Hi! Im FragTrap! lets play high five!" << std::endl;
+}
+
+void FragTrap::attack(const std::string& target)
+{
+	if (energy_points_ && hit_points_) {
+		energy_points_--;
+		std::cout << "FragTrap " << name_ << " attacks " << target
+				<< ", causing " << attack_damage_ << " points of damage! "
+				<< "(energy left: " << energy_points_ << ")" << std::endl;
+	} else {
+    	std::cout << "FragTrap " << name_ << " is too weak to attack!" << std::endl;
+	}
 }
