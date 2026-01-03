@@ -29,6 +29,18 @@ ClapTrap::ClapTrap(const ClapTrap& claptrap)
   std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name,
+					unsigned int hit_points,
+					unsigned int energy_points,
+					unsigned int attack_damage)
+	: name_(name),
+	  hit_points_(hit_points),
+	  energy_points_(energy_points),
+	  attack_damage_(attack_damage)
+{
+	std::cout << "ClapTrap detailed constructor called" << std::endl;
+};
+
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
 	if (this != &other) {

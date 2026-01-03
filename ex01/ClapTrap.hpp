@@ -19,6 +19,10 @@ class ClapTrap
 		// prepare
 		ClapTrap(const std::string& name);
 		ClapTrap(const ClapTrap& claptrap);
+		ClapTrap(std::string name,
+				unsigned int hit_points,
+				unsigned int energy_points,
+				unsigned int attack_damage);
 		ClapTrap& operator=(const ClapTrap& other);
 		
 		// basic_movement
