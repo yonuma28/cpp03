@@ -1,10 +1,7 @@
 # include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
+FragTrap::FragTrap() : ClapTrap("default_flag", 100, 100, 30)
 {
-	hit_points_ = 100;
-	energy_points_ = 100;
-	attack_damage_ = 30;
 	std::cout << "FragTrap " << this->name_ << " constructed! Ready to party." 
               << " (HP:" << this->hit_points_ << ")" << std::endl;
 }
